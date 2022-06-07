@@ -1,20 +1,13 @@
 {
-  "name": "webpack",
-  "version": "1.0.0",
-  "description": ":boom: Webpack 5 Full Project Setup.",
-  "main": "index.js",
+  "private":true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "start":"webpack serve",
+   "watch":"webpack --watch",
+   "build":"webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/madelynarana/webpack.git"
-  },
-  "keywords": [],
-  "author": "Madelyn Arana",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/madelynarana/webpack/issues"
-  },
-  "homepage": "https://github.com/madelynarana/webpack#readme"
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2"
+  }
 }
