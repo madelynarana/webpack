@@ -1,0 +1,20 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": ":boom: Webpack 5 Full Project Setup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madelynarana/webpack.git"
+  },
+  "keywords": [],
+  "author": "Madelyn Arana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madelynarana/webpack/issues"
+  },
+  "homepage": "https://github.com/madelynarana/webpack#readme"
+}
