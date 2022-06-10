@@ -1,5 +1,6 @@
+import './styles/index.scss';
 
-const deck =['A','B','C','D','J'];
+
+console.log('Hello world');
 
 
-console.log(deck.length);
