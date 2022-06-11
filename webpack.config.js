@@ -1,26 +1,25 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin"); 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require('path');
-const { Template } = require("webpack");
 
 let mode = "development";
 
 let target = "web";
 
-if(process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
     mode = "production";
-    target ="browserslist";
+    target = "browserslist";
 
 }
 module.exports = {
     mode: mode,
-    
+
     target: target,
 
-    output:{
+    output: {
         path: path.resolve(__dirname, "dist"),
-        assetModuleFilename:"images/[hash][ext][query]",
+        assetModuleFilename: "assets/img/[hash][ext][query]",
     },
 
     module: {
@@ -39,15 +38,10 @@ module.exports = {
                     "sass-loader",
                 ],
             },
-    
+
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: "asset",
-                parser:{
-                    dataUrlCondition:{
-                        maxSize:30*1024,
-                    },
-                },
+                type: "asset/resource",
             },
 
             {
@@ -55,7 +49,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-
                 }
             },
         ],
@@ -64,9 +57,9 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({template:"./src/index.html"})
+        new HtmlWebpackPlugin({ template: "./src/index.html" })
     ],
-   
+
     devtool: "source-map",
     devServer: {
         static: path.resolve(__dirname, 'dist'),
