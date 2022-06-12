@@ -1,12 +1,11 @@
 @use 'variables';
 
-
 body{
     font-size: 40px;
     background-color: variables.$bg;
     font-size: 26px;
     color: var(--text);
-    background: url("../img/bg.jpg") no-repeat;
+   background-color: peachpuff;
     background-size: contain;
     background-position: center;
     height: 100vh;

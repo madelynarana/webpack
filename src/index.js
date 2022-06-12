@@ -1,4 +1,5 @@
 import './assets/styles/index.scss';
+
 import { hello } from './assets/js/component';
 
 import imgGif from './assets/img/rick.gif';
@@ -7,6 +8,7 @@ import imgPng from './assets/img/heart.png';
 
 console.log( hello );
 
+console.log("Hello world");
 
 const img = document.createElement("img");
 

@@ -3,19 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require('path');
 
-let mode = "development";
 
-let target = "web";
+const devMode = process.env.NODE_ENV !== "production";
 
-if (process.env.NODE_ENV === "production") {
-    mode = "production";
-    target = "browserslist";
 
-}
 module.exports = {
-    mode: mode,
-
-    target: target,
+  
+    mode: devMode ? "development" : 'production',
 
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -51,19 +45,26 @@ module.exports = {
                     loader: "babel-loader",
                 }
             },
+           
         ],
     },
 
     plugins: [
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({ template: "./src/index.html" })
+
+        new MiniCssExtractPlugin({
+            filename: 'assets/css/[name].css'
+        }),
+        new HtmlWebpackPlugin({ 
+            template: "./src/index.html" 
+        })
     ],
 
+    target: devMode ? "web" : "browserslist",
     devtool: "source-map",
     devServer: {
         static: path.resolve(__dirname, 'dist'),
-        port: 8080,
+        port: 9090,
         open: true,
         hot: true
     },
