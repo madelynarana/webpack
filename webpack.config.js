@@ -8,17 +8,17 @@ const devMode = process.env.NODE_ENV !== "production";
 
 
 module.exports = {
-  
+
     mode: devMode ? "development" : 'production',
 
     output: {
         path: path.resolve(__dirname, "dist"),
-        assetModuleFilename: "assets/img/[hash][ext][query]",
+        filename: devMode ? "assets/js/main.js": "[contenthash].js",
+        assetModuleFilename: devMode ? "assets/img/[name][ext]": "img/[hash][ext]",
     },
 
     module: {
         rules: [
-
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use: [{
@@ -45,7 +45,7 @@ module.exports = {
                     loader: "babel-loader",
                 }
             },
-           
+
         ],
     },
 
@@ -53,19 +53,23 @@ module.exports = {
         new CleanWebpackPlugin(),
 
         new MiniCssExtractPlugin({
-            filename: 'assets/css/[name].css'
+            filename: devMode ? 'assets/css/[name].css': '[contenthash].css',   
         }),
+
         new HtmlWebpackPlugin({ 
             template: "./src/index.html" 
         })
     ],
 
     target: devMode ? "web" : "browserslist",
+
     devtool: "source-map",
+
     devServer: {
         static: path.resolve(__dirname, 'dist'),
         port: 9090,
         open: true,
         hot: true
+        
     },
 };
