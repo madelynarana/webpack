@@ -24,7 +24,7 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        publicPath: ''
+                        publicPath: '../../'
                     },
                 },
                     "css-loader",
@@ -69,7 +69,7 @@ module.exports = {
         static: path.resolve(__dirname, 'dist'),
         port: 9090,
         open: true,
-        hot: true
+
         
     },
 };

@@ -1,21 +1,13 @@
 import './assets/styles/index.scss';
 
+import rick from './assets/img/rick.gif'
+
 import { hello } from './assets/js/component';
 
-import imgGif from './assets/img/rick.gif';
-import imgSvg from './assets/img/hello.svg';
-import imgPng from './assets/img/heart.png';
-
-console.log( hello );
-
-console.log("Hello world");
 
 const img = document.createElement("img");
+img.src =  rick;
 
-img.src = imgPng;
-img.src = imgGif;
-img.src = imgSvg;
+document.body.appendChild(img);
 
-const block = document.getElementById("heart");
-
-block.appendChild(img);
+console.log(hello);
