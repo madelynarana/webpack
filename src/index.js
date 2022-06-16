@@ -1,4 +1,4 @@
-import './assets/styles/index.scss';
+import './assets/style/index.scss';
 import licence from './assets/font/Lato/ofl.txt'; // Licence Lato.
 
 import rick from './assets/img/rick.gif';
