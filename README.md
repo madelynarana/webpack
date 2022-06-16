@@ -2,14 +2,21 @@
 
 Here are some  things this project supports:
 
-- Latest stable ES version transpiling through `@babel/preset-env` and `babel-loader`.
-
-- importing `.css` files into javascript files through `css-loader`.
-- Sass: `.scss` and `.sass` formats through `sass-loader` and dart sass (`sass`) package.
-- importing images (including `.svg`) through `import` syntax in javascript and `url()` syntax in css.
-- automatically inlining images less than 8kb (webpack default, which is configurable) into the javascript bundle output. Anything over 8kb will be created as a resource file in the final output folder.
-- `html-webpack-plugin@next` for outputting an `index.html` from a template for proper production builds support. 
-- `clean-webpack-plugin` for automatic cleanup of the output directory (`dist/`) on each build.
+"@babel/core": "^7.18.2",
+"@babel/preset-env": "^7.18.2",
+"babel-loader": "^8.2.5",
+"css-loader": "^6.7.1",
+"html-loader": "^3.1.0",
+"html-webpack-plugin": "^5.5.0",
+"mini-css-extract-plugin": "^2.6.0",
+"postcss": "^8.4.14",
+"postcss-loader": "^7.0.0",
+"postcss-preset-env": "^7.7.1",
+"sass": "^1.52.3",
+"sass-loader": "^13.0.0",
+"webpack": "^5.73.0",
+"webpack-cli": "^4.9.2",
+"webpack-dev-server": "^4.9.1"
 
 ## Start using for a new project
 1. Clone the repo
