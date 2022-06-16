@@ -15,14 +15,12 @@ module.exports = {
 
     module: {
         rules: [
+
             {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                    },
-                ],
+                test: /\.pug$/,
+                loader: 'pug-loader',
             },
+
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use: [{
@@ -65,9 +63,13 @@ module.exports = {
             filename: devMode ? 'assets/css/[name].css': '[contenthash].css',   
         }),
 
-        new HtmlWebpackPlugin({ 
-            template: './src/index.html' 
-        })
+        new HtmlWebpackPlugin({
+            template: "./src/index.pug",
+            options: {
+                attrs: ['img:src', 'link:href']
+            },
+            minify: devMode ? false: true,
+        }),
     ],
 
     target: devMode ? 'web' : 'browserslist',
@@ -81,6 +83,6 @@ module.exports = {
 
         port: 9090,
         open: true,
-        hot: true
+        hot: true,
     },
 };
