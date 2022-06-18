@@ -11,12 +11,12 @@ module.exports = {
 
     entry: {
         index: {
-            import: './src/pages/index/index.js',
-            filename: 'index/[name].js',
+            import: './src/pages/index/script.js',
+            filename: 'index/script.js',
         },
         about: {
-            import: './src/pages/about/about.js',
-            filename: 'about/about.js',
+            import: './src/pages/about/script.js',
+            filename: 'about/script.js',
         },
     },
     output: {
@@ -83,9 +83,9 @@ module.exports = {
         
         }),
         new HtmlWebpackPlugin({
-            template: './src/pages/about/about.html',
+            template: './src/pages/about/index.html',
             chunks: ['about'],
-            filename: 'about/about.html'
+            filename: 'about/index.html'
         }),
     ],
 
