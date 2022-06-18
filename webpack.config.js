@@ -3,24 +3,24 @@ const HtmlWebpackPlugin      = require('html-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production'; // Development mode
 
+
+
 module.exports = {
 
     mode: devMode ? 'development' : 'production',
 
     entry: {
         index: {
-            import: './src/index.js',
-            filename: '[name].js'
+            import: './src/pages/index/index.js',
+            filename: 'index/[name].js',
         },
         about: {
-            import: './src/page-about/about.js',
-            filename: 'page-about/about.js'
+            import: './src/pages/about/about.js',
+            filename: 'about/about.js',
         },
-   
     },
     output: {
-        // filename: devMode ? 'assets/js/main.js': '[contenthash].js',
-      //  assetModuleFilename: devMode ? 'assets/img/[name][ext]': 'img/[hash][ext]',
+        assetModuleFilename: devMode ? 'assets/img/[name][ext]': 'img/[hash][ext]',
         clean: true,
     },
 
@@ -39,7 +39,7 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        publicPath:  devMode ? '../../':''
+                        publicPath:    '../'
                     },
                 },
                     'css-loader',
@@ -73,18 +73,19 @@ module.exports = {
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename: devMode ? 'assets/css/[name].css': '[contenthash].css',   
+            filename:  '[name]/style.css',   
         }),
 
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/pages/index/index.html',
             chunks: ['index'],
+            filename: 'index.html'
+        
         }),
         new HtmlWebpackPlugin({
-            template: './src/page-about/about.html',
-            inject: 'body',
+            template: './src/pages/about/about.html',
             chunks: ['about'],
-            filename: 'page-about/about.html'
+            filename: 'about/about.html'
         }),
     ],
 
