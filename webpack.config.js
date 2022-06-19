@@ -65,9 +65,6 @@ module.exports = {
             filename: devMode ? 'assets/css/[name].css': '[contenthash].css',   
         }),
 
-        new HtmlWebpackPlugin({ 
-            template: './src/index.html' 
-        })
     ],
 
     target: devMode ? 'web' : 'browserslist',
