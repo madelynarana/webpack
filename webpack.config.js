@@ -42,12 +42,14 @@ module.exports = {
 
     module: {
         rules: [
-
             {
-                test: /\.pug$/,
-                loader: 'pug-loader',
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                ],
             },
-
             {
                 test: /\.(s[ac]|c)ss$/i,
                 use: [{
@@ -89,7 +91,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name]/style.css',
         }),
-
         ...getEntryHtmlPlugins(),
     ],
 
@@ -104,6 +105,6 @@ module.exports = {
 
         port: 9090,
         open: true,
-        hot: true,
+        hot: true
     },
 };
