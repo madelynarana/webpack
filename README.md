@@ -12,14 +12,11 @@ Here are some  things this project supports:
 "postcss": "^8.4.14",
 "postcss-loader": "^7.0.0",
 "postcss-preset-env": "^7.7.1",
-"pug": "^3.0.2",
-"pug-loader": "^2.4.0",
 "sass": "^1.52.3",
 "sass-loader": "^13.0.0",
 "webpack": "^5.73.0",
 "webpack-cli": "^4.9.2",
 "webpack-dev-server": "^4.9.1"
-  
 
 ## Start using for a new project
 1. Clone the repo
