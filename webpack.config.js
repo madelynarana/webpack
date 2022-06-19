@@ -20,9 +20,10 @@ const getEntry = () => {
 const getEntryHtmlPlugins = () => {
     return Object.keys(entry).map(filename => {
         return new HtmlWebpackPlugin({
-            template: `./src/pages/${filename}/index.html`,
+            template: `./src/pages/${filename}/index.pug`,
             filename: filename === "index" ? `index.html` : `${filename}/index.html`,
             chunks: [`${filename}`],
+            favicon: './src/assets/img/rick.png',
         });
     });
 };
@@ -49,6 +50,10 @@ module.exports = {
                         loader: 'html-loader',
                     },
                 ],
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
             },
             {
                 test: /\.(s[ac]|c)ss$/i,
